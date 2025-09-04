@@ -6,13 +6,16 @@ namespace Program
     {
         static void Main()
         {
-            Console.WriteLine("Введите число натуральное n: ");
+            Console.WriteLine("Введите предложение и то, сколько раз его нужно повторить");
+            string str = Console.ReadLine();
             int n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i <= n; i++)
+            for(int i = 0; i < n; i++)
             {
-                Console.WriteLine($"Квадрат числа {i} равен {Math.Pow(i,2)}");
+                Console.WriteLine(str);
             }
+
+
         }
     }
 }
