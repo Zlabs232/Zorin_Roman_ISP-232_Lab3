@@ -8,7 +8,7 @@ namespace Program
         {
             for (int i = 1; i <= 10; i++)
             {
-                Console.WriteLine($"5 x {i} = {i*5}");
+                Console.WriteLine("Запомни: всего одна ошибка и ты ошибся.");
             }
         }
     }
