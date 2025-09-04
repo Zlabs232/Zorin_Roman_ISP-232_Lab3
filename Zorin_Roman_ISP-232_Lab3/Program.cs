@@ -2,28 +2,28 @@
 {
     class Program
     {
-        enum TrafficLight { Red, Yellow, Green }
+        enum OrderStatus { New, Processing, Shipped, Delivered}
 
         static void Main()
         {
-            TrafficLight cur = TrafficLight.Green;
-
-            for(int i = 0; i < 5; i++)
+            OrderStatus[] test =
             {
-                Console.WriteLine($"Текущий свет: {cur}");
+                OrderStatus.New,
+                OrderStatus.Processing,
+                OrderStatus.Shipped,
+                OrderStatus.Delivered,
+            };
 
-                cur = cur switch
-                {
-                    TrafficLight.Red => TrafficLight.Yellow,
-                    TrafficLight.Yellow => TrafficLight.Green,
-                    TrafficLight.Green => TrafficLight.Red,
-                    _ => cur
-                };
+            foreach(var status in test)
+            {
+                bool canC = Check(status);
+                Console.WriteLine($"Статус заказа: {status}, Можно ли отменить: {(canC == true ? "Да" : "Нет")}");
+            }
+        }
 
-                Console.WriteLine($"Следующий свет: {cur}");
-                Console.WriteLine("---");
-            } 
-            
+        static bool Check(OrderStatus status)
+        {
+            return status == OrderStatus.New || status == OrderStatus.Processing;
         }
     }
 }
