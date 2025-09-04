@@ -6,9 +6,12 @@ namespace Program
     {
         static void Main()
         {
-            for (int i = 1; i <= 10; i++)
+            Console.WriteLine("Введите число натуральное n: ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i <= n; i++)
             {
-                Console.WriteLine("Запомни: всего одна ошибка и ты ошибся.");
+                Console.WriteLine($"Квадрат числа {i} равен {Math.Pow(i,2)}");
             }
         }
     }
